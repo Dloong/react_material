@@ -1,6 +1,6 @@
 import { red } from '@material-ui/core/colors';
 import { createMuiTheme } from '@material-ui/core/styles';
-
+import { zhCN, idID } from '@material-ui/core/locale';
 // A custom theme for this app
 const theme = createMuiTheme({
   palette: {
@@ -17,6 +17,6 @@ const theme = createMuiTheme({
       default: '#fff',
     },
   },
-});
+}, process.env.REACT_APP_LANG=== "en"? zhCN : idID );
 
 export default theme;

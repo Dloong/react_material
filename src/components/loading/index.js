@@ -28,11 +28,11 @@ class ProgressLoading extends React.Component {
       }
     render() {
         return (
-            <Backdrop open={this.state.show}>
+          this.state.show? <Backdrop open={this.state.show}>
               <div className={'loading-wrapper'}>
                 <CircularProgress />
               </div>
-            </Backdrop>
+            </Backdrop>: null
         );
     }
 }
