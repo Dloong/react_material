@@ -1,7 +1,8 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import {SvgIcon, Typography} from '@material-ui/core';
-
+import {Trans } from 'react-i18next';
+import { useTranslation } from 'react-i18next';
 function LightBulbIcon(props) {
   return (
     <SvgIcon {...props}>
@@ -22,13 +23,25 @@ const useStyles = makeStyles((theme) => ({
 
 export default function ProTip() {
   const classes = useStyles();
-
+  const {t} = useTranslation();
   return (
     <Typography className={classes.root} color="textSecondary">
       <LightBulbIcon className={classes.lightBulb} />
+      <Trans i18nKey="description.part1">
+        To get started, edit <code>src/App.js</code> and save to reload.
+      </Trans>
+      {t("title")}
+
+
       Pro tip: See more{' '}
       templates on the
       Material-UI documentation.
+
+
+
+      <Trans i18nKey="description.part2">
+        To get started, edit <code>src/App.js</code> and save to reload.
+      </Trans>
     </Typography>
   );
 }
