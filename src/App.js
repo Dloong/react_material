@@ -1,11 +1,11 @@
-import React, {useEffect} from 'react';
+import React, { useEffect } from 'react';
 import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import Link from '@material-ui/core/Link';
 import ProTip from './ProTip';
 import AppHeader from "./components/common/AppHeader"
-import {test} from "./http/api"
+import { test } from "./http/api"
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
@@ -18,11 +18,11 @@ function Copyright() {
     </Typography>
   );
 }
-async function testApi(){
+async function testApi() {
   try {
-    let result = await test({pageNo:1 ,rowNo: 6})
+    let result = await test({ pageNo: 1, rowNo: 6 })
     console.log(result)
-  }catch(e) {
+  } catch (e) {
     console.log(e);
 
   }
@@ -36,14 +36,14 @@ export default function App() {
     <div>
       <AppHeader title="Back"></AppHeader>
       <Container maxWidth="sm">
-      <Box my={4}>
-        <Typography variant="h4" component="h1" gutterBottom>
-          Create React App v4-beta example
+        <Box my={4}>
+          <Typography variant="h4" component="h1" gutterBottom>
+            Create React App v4-beta example
         </Typography>
-        <ProTip />
-        <Copyright />
-      </Box>
-    </Container>
+          <ProTip />
+          <Copyright />
+        </Box>
+      </Container>
     </div>
 
   );
