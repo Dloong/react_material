@@ -2,7 +2,7 @@ import React, { Suspense } from 'react';
 import ReactDOM from 'react-dom';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import { ThemeProvider } from '@material-ui/core/styles';
-import App from './App';
+import App from './pages/App';
 import theme from './theme';
 import * as serviceWorker from './serviceWorker';
 import "./utils/i18n"

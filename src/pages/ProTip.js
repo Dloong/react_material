@@ -32,13 +32,6 @@ export default function ProTip() {
       </Trans>
       {t("title")}
 
-
-      Pro tip: See more{' '}
-      templates on the
-      Material-UI documentation.
-
-
-
       <Trans i18nKey="description.part2">
         To get started, edit <code>src/App.js</code> and save to reload.
       </Trans>
