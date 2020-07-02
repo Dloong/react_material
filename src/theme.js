@@ -14,8 +14,27 @@ const theme = createMuiTheme({
       main: red.A400,
     },
     background: {
-      default: '#fff',
+      default: '#D8D8D8',
+    }
+  },
+  overrides: {
+    MuiInput: {
+      input: {
+        marginLeft: 4,
+        marginRight: 4,
+        padding: 12
+      },
+      underline: {
+        '&:before': {
+          borderBottom: '1px solid #D8D8D8'
+        }
+      }
     },
+    MuiFormControl: {
+      root: {
+        backgroundColor: '#fff'
+      }
+    }
   },
 }, process.env.REACT_APP_LANG=== "en"? zhCN : idID );
 

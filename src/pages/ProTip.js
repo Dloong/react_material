@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import {SvgIcon, Typography} from '@material-ui/core';
+import {SvgIcon, Typography, Link} from '@material-ui/core';
 import {Trans } from 'react-i18next';
 import { useTranslation } from 'react-i18next';
 import AppHeader from "../components/common/AppHeader"
@@ -27,7 +27,7 @@ export default function ProTip() {
   const {t} = useTranslation();
   return (
     <Fragment>
-      <AppHeader></AppHeader>
+      <AppHeader title={'Translation'}></AppHeader>
     <Typography className={classes.root} color="textSecondary">
       <LightBulbIcon className={classes.lightBulb} />
       <Trans i18nKey="description.part1">
@@ -38,6 +38,7 @@ export default function ProTip() {
       <Trans i18nKey="description.part2">
         To get started, edit <code>src/App.js</code> and save to reload.
       </Trans>
+      <Link href="/form">查看表单</Link>
     </Typography>
     </Fragment>
 
