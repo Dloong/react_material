@@ -4,7 +4,6 @@ import {SvgIcon, Typography} from '@material-ui/core';
 import {Trans } from 'react-i18next';
 import { useTranslation } from 'react-i18next';
 import AppHeader from "../components/common/AppHeader"
-import { divide } from 'lodash';
 function LightBulbIcon(props) {
   return (
     <SvgIcon {...props}>
@@ -27,20 +26,20 @@ export default function ProTip() {
   const classes = useStyles();
   const {t} = useTranslation();
   return (
-    <React.Fragment>
+    <Fragment>
       <AppHeader></AppHeader>
-      <Typography className={classes.root} color="textSecondary">
-        <LightBulbIcon className={classes.lightBulb} />
-        <Trans i18nKey="description.part1">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </Trans>
-        {t("title")}
+    <Typography className={classes.root} color="textSecondary">
+      <LightBulbIcon className={classes.lightBulb} />
+      <Trans i18nKey="description.part1">
+        To get started, edit <code>src/App.js</code> and save to reload.
+      </Trans>
+      {t("title")}
 
-        <Trans i18nKey="description.part2">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </Trans>
-      </Typography>
-    </React.Fragment>
+      <Trans i18nKey="description.part2">
+        To get started, edit <code>src/App.js</code> and save to reload.
+      </Trans>
+    </Typography>
+    </Fragment>
 
   );
 }
