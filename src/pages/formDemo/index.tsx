@@ -11,6 +11,8 @@ import DateFnsUtils from "@date-io/date-fns";
 import { DatePicker } from "formik-material-ui-pickers";
 import Adornment from "../../components/inputAdornment"
 import AppHeader from "../../components/common/AppHeader"
+import store from "../../store"
+import {testRedux} from "../../store/actionCreator"
 const useStyles = makeStyles({
   inputAlign: {
     "& input": {
@@ -18,7 +20,9 @@ const useStyles = makeStyles({
     },
   },
 });
-
+interface Values {
+  email: string;
+}
 export default function FormDemo() {
   const classes = useStyles();
   return (
@@ -27,15 +31,12 @@ export default function FormDemo() {
     <Formik
       initialValues={{
         email: "",
-        password: "",
         name: "",
-        date: "",
+        dateTime: "",
         price: ""
       }}
       validate={(values) => {
-        const errors = {
-          email: ""
-        };
+        const errors: Partial<Values> = {};
         if (!values.email) {
           errors.email = "Required";
         } else if (
@@ -45,9 +46,9 @@ export default function FormDemo() {
         }
         return errors;
       }}
-      onSubmit={(values, { setSubmitting }) => {
-        console.log(values, "=======234");
-
+      onSubmit={(values, {setSubmitting}) => {
+        const action = testRedux(values)
+        store.dispatch(action)
         setTimeout(() => {
           setSubmitting(false);
           alert(JSON.stringify(values, null, 2));
@@ -74,6 +75,7 @@ export default function FormDemo() {
             <Field
               component={DatePicker}
               name="dateTime"
+              type="text"
               fullWidth
               InputProps={{
                 startAdornment: (<Adornment pl={2}  text={'Date of Start'} />),

@@ -1,0 +1,1 @@
+export const TEST_DEMO = "test_demo"
