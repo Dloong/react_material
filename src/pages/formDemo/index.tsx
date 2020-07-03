@@ -12,7 +12,7 @@ import { DatePicker } from "formik-material-ui-pickers";
 import Adornment from "../../components/inputAdornment"
 import AppHeader from "../../components/common/AppHeader"
 import store from "../../store"
-import {testRedux} from "../../store/actionCreator"
+import {testThunk} from "../../store/actionCreator"
 const useStyles = makeStyles({
   inputAlign: {
     "& input": {
@@ -47,8 +47,8 @@ export default function FormDemo() {
         return errors;
       }}
       onSubmit={(values, {setSubmitting}) => {
-        const action = testRedux(values)
-        store.dispatch(action)
+        store.dispatch(testThunk())
+
         setTimeout(() => {
           setSubmitting(false);
           alert(JSON.stringify(values, null, 2));
