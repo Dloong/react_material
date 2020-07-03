@@ -26,7 +26,6 @@ const routes = [
     }
 ]
 
-
 function RouterView() {
     return (
       <Router>
@@ -34,7 +33,7 @@ function RouterView() {
           {routes.map(item => (
             <Route
               key={item.path}
-              exact={item.exact??false}
+              exact={true}
               path={item.path}
               component={
                 item.component

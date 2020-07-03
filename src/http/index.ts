@@ -12,6 +12,7 @@ axios.interceptors.request.use(
     return config;
   },
   loading.show(),
+  // @ts-ignore
   function(error) {
     loading.done()
     return Promise.reject(error);
@@ -24,6 +25,7 @@ axios.interceptors.response.use(
     if (response.data.code !== 200) {}
     return response;
   },
+  // @ts-ignore
   error => {
     if (error.response.status === 401) {
       return error.response;

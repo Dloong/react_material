@@ -1,4 +1,4 @@
-export  const formatMoney = (val) => {
+export  const formatMoney = (val:any) => {
     val = val.toString().replace(/[.,]/g, "");
     if(isNaN(val * 1)) {
         return ""

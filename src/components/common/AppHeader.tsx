@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function ButtonAppBar(props) {
+export default function ButtonAppBar(props: any) {
   const classes = useStyles();
     const handleBack = ()=> {
       window.history.go(-1)

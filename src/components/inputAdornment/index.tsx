@@ -1,7 +1,7 @@
 import React from 'react';
 import {Box, InputAdornment } from "@material-ui/core";
 
-export default function EndAdorn (props) {
+export default function EndAdorn (props: any) {
 
     return (
         <Box pr={props.pr} pl={props.pl}>

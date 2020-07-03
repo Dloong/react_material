@@ -33,7 +33,9 @@ export default function FormDemo() {
         price: ""
       }}
       validate={(values) => {
-        const errors = {};
+        const errors = {
+          email: ""
+        };
         if (!values.email) {
           errors.email = "Required";
         } else if (

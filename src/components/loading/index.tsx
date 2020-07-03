@@ -8,8 +8,8 @@ let defaultState = {
 }
 
 
-class ProgressLoading extends React.Component {
-    constructor(props){
+class ProgressLoading extends React.Component<any, any> {
+    constructor(props: any, context: any){
         super(props)
         this.state = {...defaultState}
 
