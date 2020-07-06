@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Formik, Form, Field } from "formik";
 import { makeStyles } from "@material-ui/core/styles";
-import { Button, LinearProgress, Box, InputAdornment } from "@material-ui/core";
+import { LinearProgress, Box, InputAdornment } from "@material-ui/core";
 import { TextField } from "formik-material-ui";
 // import FormDatePicker from "../../components/form/FormDatePicker"
 import CalendarTodayIcon from '@material-ui/icons/CalendarToday';
@@ -13,6 +13,7 @@ import Adornment from "../../components/inputAdornment"
 import AppHeader from "../../components/common/AppHeader"
 import store from "../../store"
 import {testThunk} from "../../store/actionCreator"
+import FooterButton from "../../components/common/FooterButton"
 const useStyles = makeStyles({
   inputAlign: {
     "& input": {
@@ -47,6 +48,7 @@ export default function FormDemo() {
         return errors;
       }}
       onSubmit={(values, {setSubmitting}) => {
+        debugger
         store.dispatch(testThunk())
 
         setTimeout(() => {
@@ -105,14 +107,12 @@ export default function FormDemo() {
             />
             {isSubmitting && <LinearProgress />}
             <br />
-            <Button
-              variant="contained"
-              color="primary"
+            <FooterButton
               disabled={isSubmitting}
-              onClick={submitForm}
-            >
-              Submit
-            </Button>
+              variant="contained"
+              fullWidth={true}
+              color="primary"
+              onClick={submitForm}> Submit</FooterButton>
           </Form>
         </MuiPickersUtilsProvider>
       )}

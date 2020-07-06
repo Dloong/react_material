@@ -5,7 +5,7 @@ import { zhCN, idID } from '@material-ui/core/locale';
 const theme = createMuiTheme({
   palette: {
     primary: {
-      main: '#556cd6',
+      main: '#FFD100',
     },
     secondary: {
       main: '#19857b',
