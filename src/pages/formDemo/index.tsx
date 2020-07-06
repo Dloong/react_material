@@ -14,6 +14,7 @@ import AppHeader from "../../components/common/AppHeader"
 import store from "../../store"
 import {testThunk} from "../../store/actionCreator"
 import FooterButton from "../../components/common/FooterButton"
+import PageEmpty from "../../components/common/PageEmpty"
 const useStyles = makeStyles({
   inputAlign: {
     "& input": {
@@ -117,6 +118,7 @@ export default function FormDemo() {
         </MuiPickersUtilsProvider>
       )}
     </Formik>
+    <PageEmpty></PageEmpty>
     </div>
   );
 }
