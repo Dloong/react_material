@@ -15,6 +15,8 @@ import store from "../../store"
 import {testThunk} from "../../store/actionCreator"
 import FooterButton from "../../components/common/FooterButton"
 import PageEmpty from "../../components/common/PageEmpty"
+import Upload from "../../components/upload"
+
 const useStyles = makeStyles({
   inputAlign: {
     "& input": {
@@ -27,6 +29,10 @@ interface Values {
 }
 export default function FormDemo() {
   const classes = useStyles();
+  const imgUploaded = (file:File,value: Object) => {
+    console.log(value);
+
+  }
   return (
       <div>
           <AppHeader title={'Form'} />
@@ -118,6 +124,7 @@ export default function FormDemo() {
         </MuiPickersUtilsProvider>
       )}
     </Formik>
+    <Upload action={'/upload'} onChange={imgUploaded}></Upload>
     <PageEmpty></PageEmpty>
     </div>
   );
