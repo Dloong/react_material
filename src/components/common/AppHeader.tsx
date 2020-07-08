@@ -1,9 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-import IconButton from '@material-ui/core/IconButton';
+import {Typography, IconButton, Toolbar, AppBar, Box} from '@material-ui/core';
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 
 
@@ -16,27 +13,46 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1
   },
 }));
+export interface AppHeaderProps {
+  backIcon?: string,
+  showBack?: boolean,
+  title: string,
+  endIcon?: string
+}
 
-export default function ButtonAppBar(props: any) {
+
+ function ButtonAppBar(props: AppHeaderProps) {
   const classes = useStyles();
     const handleBack = ()=> {
       window.history.go(-1)
     }
+    const {title, backIcon, endIcon, showBack} = props
   return (
     <div className={classes.root}>
       <AppBar position="static">
         <Toolbar>
-          <IconButton edge="start" color="inherit" aria-label="menu" onClick={handleBack}>
-            {props.backIcon?? <ArrowBackIosIcon />}
+          {
+            showBack && <IconButton edge="start" color="inherit" aria-label="menu" onClick={handleBack}>
+            {backIcon?? <ArrowBackIosIcon />}
           </IconButton>
-          <Typography variant="h6" className={classes.title}>
-            {props.title}
+          }
+
+          <Box textAlign="center" width="100%">
+            <Typography variant="h6" className={classes.title}>
+            {title}
           </Typography>
+          </Box>
           <IconButton edge="end"  color="inherit" aria-label="menu">
-            {props.endIcon}
+            {endIcon}
           </IconButton>
         </Toolbar>
       </AppBar>
     </div>
   );
 }
+
+ButtonAppBar.defaultProps ={
+  showBack: true
+}
+
+export default ButtonAppBar

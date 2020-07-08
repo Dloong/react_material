@@ -8,7 +8,7 @@ import {
 import ProTip from '../pages/ProTip';
 import FormDemo from "../pages/formDemo"
 import Home from "../pages/Home"
-
+import PoListPage from "../pages/PoListPage"
 
 const routes = [
     {
@@ -23,6 +23,10 @@ const routes = [
     {
         path: "/form",
         component: FormDemo
+    },
+    {
+      path: "/PoList",
+      component: PoListPage
     }
 ]
 

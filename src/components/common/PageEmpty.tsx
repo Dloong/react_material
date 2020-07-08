@@ -5,7 +5,6 @@ import { makeStyles } from '@material-ui/core/styles';
 const useStyles = makeStyles((theme) => ({
     root: {
       width: '80vw',
-      margin: '0 auto'
     },
 
   }));
@@ -13,7 +12,7 @@ const useStyles = makeStyles((theme) => ({
 function PageEmpty(prop: BoxProps) {
     const classes = useStyles();
     return (
-        <div className={classes.root}>
+        <Box className={classes.root} ml={'auto'} mr={'auto'} mt={8}>
             <Box display="flex" justifyContent="center">
                 <img src={empty} alt=""/>
             </Box>
@@ -23,7 +22,7 @@ function PageEmpty(prop: BoxProps) {
             <Box display="flex" mt={2} color="text.disabled" justifyContent="center">
                 <Typography variant="inherit" align="center">Awesome! Quickly publish and share your PO.  Your PO will appear here.</Typography>
             </Box>
-        </div>
+        </Box>
 
     )
 }

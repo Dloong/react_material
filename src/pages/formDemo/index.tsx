@@ -55,9 +55,7 @@ export default function FormDemo() {
         return errors;
       }}
       onSubmit={(values, {setSubmitting}) => {
-        debugger
         store.dispatch(testThunk())
-
         setTimeout(() => {
           setSubmitting(false);
           alert(JSON.stringify(values, null, 2));
